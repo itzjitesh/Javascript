@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 
-<body>
+<!-- First method to countToTen -->
+<!-- <body>
     <div class="count">
 
     </div>
@@ -16,9 +17,26 @@
         document.addEventListener("DOMContentLoaded", () => {
             const countToTen = document.querySelector(".count");
             for (let i = 1; i <= 10; i++) {
-                countToTen.innerHTML += i + "<br>";
+                countToTen.innerHTML += i + "<br>"; //this would add the content to the previous stored data (1<br>, then 2<br>,...)
+                // countToTen.innerHTML = i + "<br>"; //this would update the content of count each time (10<br>) as every time content is updated at last it would be this.
             }
         });
+    </script>
+</body> -->
+
+<!-- Second method to countToTen -->
+
+<body onload="countToTen()">
+    <div class="count"></div>
+    <script>
+        function countToTen() {
+            var count = 0;
+            const countTen = document.querySelector('.count');
+            while (count < 10) {
+                count++;
+                countTen.innerHTML += count + "<br>";
+            }
+        }
     </script>
 </body>
 
