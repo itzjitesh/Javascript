@@ -56,3 +56,17 @@ Practice:
 - Keep a weakness active until the learner explains it correctly and passes a new problem without hints.
 - Re-test weak topics after roughly 1 day, 3 days and 7 days.
 - Use new questions in retests; avoid memorizing answers to the same quiz.
+
+
+### Session 2 — Truthy/falsy and equality retest (27 October 2026)
+- Result: **5/5 (100%)** on fresh questions.
+- Correctly identified `Boolean("0")` and `Boolean([])` as true.
+- Correctly distinguished `0 == false` (true) from `0 === false` (false).
+- Correctly recognized that `if ([])` executes and separate empty arrays are not strictly equal.
+- Interpretation: immediate recall improved. Do not mark truthiness or equality mastered yet; use harder examples and a delayed retest.
+
+## Updated score history
+| Session | Focus | Score | Next action |
+|---|---|---:|---|
+| 1 | Values, variables, coercion, equality | 3/5 (60%) | Retest weak areas |
+| 2 | Fresh truthiness and equality questions | 5/5 (100%) | Test edge cases and delayed recall |
