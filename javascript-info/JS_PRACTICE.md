@@ -5,8 +5,9 @@ This file records performance and targeted follow-up exercises. Add a new sessio
 ## Current learning profile
 - **Baseline quiz:** 3/5 (60%)
 - **Strengths observed:** identified const reassignment error; distinguished string concatenation result; understood that a const object can have its properties mutated.
-- **Needs practice:** falsy/truthy values, especially empty arrays; strict vs loose equality and type coercion.
-- **Next action:** complete the “Truthy or Falsy?” warm-up and “Equality Detective” challenge before moving to new material.
+- **Needs practice:** abstract equality conversion (`[] == 0`), null's special loose-equality rules (`null == 0`), BigInt zero falsiness, and `null == undefined` versus strict equality.
+- **Improving:** empty-array truthiness, non-empty string truthiness, and `NaN === NaN` were handled correctly in fresh questions.
+- **Next action:** pause new topics for a focused walkthrough and coding drill on coercion rules; re-test with fresh examples.
 
 ## Weak-area queue
 
@@ -70,3 +71,30 @@ Practice:
 |---|---|---:|---|
 | 1 | Values, variables, coercion, equality | 3/5 (60%) | Retest weak areas |
 | 2 | Fresh truthiness and equality questions | 5/5 (100%) | Test edge cases and delayed recall |
+
+
+### Session 3 — Equality and coercion edge cases (27 October 2026)
+- Result: **1/5 (20%)**.
+- Correct: `NaN === NaN` evaluates to false.
+- Missed: `[] == 0` (true, due to array-to-primitive and then numeric conversion); `null == 0` (false, due to special null equality rules); identifying both falsy values in a multi-select (`NaN` and `0n)); `null == undefined` (true) versus `null === undefined` (false).
+- **Interpretation:** basic truthiness improved, but coercion rules are not yet secure. Do not move past equality/type conversion until these cases are explained and solved independently.
+
+### New weak areas
+#### W3 — Abstract equality and array-to-primitive conversion
+- `[] == 0` is true: array converts to `""`, then the empty string converts to numeric 0.
+- Contrast: `null == 0` is false. Do not apply the same generic “everything becomes a number” assumption to null.
+
+#### W4 — BigInt falsiness
+- `0n` is falsy. A non-empty string such as `"false"` is truthy.
+- Multi-select questions require every correct choice, not just one correct choice.
+
+#### W5 — Nullish equality
+- `null == undefined` is true; `null === undefined` is false.
+- `NaN === NaN` is false; use `Number.isNaN(value)` to test for NaN.
+
+## Updated score history
+| Session | Focus | Score | Next action |
+|---|---|---:|---|
+| 1 | Values, variables, coercion, equality | 3/5 (60%) | Retest weak areas |
+| 2 | Fresh truthiness and equality questions | 5/5 (100%) | Test edge cases and delayed recall |
+| 3 | Coercion and equality edge cases | 1/5 (20%) | Targeted explanation and coding drill |
