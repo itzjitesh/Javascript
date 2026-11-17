@@ -62,3 +62,32 @@ Don't mark this cluster as mastered until you can explain the rules, predict exa
 
 ## How future notes will be added
 For each session, add: concept → short explanation → minimal example → common pitfall → recall prompt → exercise. Add questions asked by Jitesh and recurring mistakes to the weak-area section. Keep detailed source-specific course wording out; notes should be original and concise.
+
+
+## Session 3 — Equality and coercion edge cases (27 October 2026)
+
+### Rules to remember
+- `[] == 0` is **true**: loose equality converts the empty array to a primitive (the empty string), then the empty string to numeric zero.
+- `null == 0` is **false**: the special null/undefined equality rule does not make null equal to zero.
+- `null == undefined` is **true**, but `null === undefined` is **false**.
+- `NaN === NaN` is **false**. Use `Number.isNaN(value)` to check for NaN.
+- `0n` (BigInt zero) is falsy. The non-empty string `"false"` is truthy.
+- Prefer `===` and avoid relying on surprising coercion in application logic.
+
+### Conversion walkthrough
+```js
+[] == 0              // true
+String([])           // ""
+Number("")           // 0
+null == 0            // false
+null == undefined    // true
+null === undefined   // false
+NaN === NaN          // false
+Boolean(0n)          // false
+Boolean("false")     // true
+```
+
+### Common pitfalls
+- Do not assume loose equality always converts every operand to a number; null and undefined have special rules.
+- Truthiness is not based on the apparent meaning of a string: `"false"` is truthy because it is non-empty.
+- BigInt zero is falsy just like numeric zero.
