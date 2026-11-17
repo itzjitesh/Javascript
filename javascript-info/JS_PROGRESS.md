@@ -12,9 +12,9 @@
 
 ## Dashboard
 - **Daily study target:** 60 minutes
-- **Current baseline quiz:** 3/5 (60%)
-- **Current focus:** truthy/falsy values and strict equality (`===`)
-- **Current stage:** opening fundamentals introduced; not yet mastered
+- **Quiz history:** baseline 3/5 (60%); familiar retest 5/5 (100%); edge-case quiz 1/5 (20%).
+- **Current focus:** abstract equality, null/undefined special cases, BigInt falsiness, and type-conversion steps.
+- **Current stage:** fundamentals introduced; edge cases not mastered. Pause progression for targeted practice.
 - **Session log:** see `JS_PRACTICE.md`
 - **Revision notes:** see `JS_MASTER_NOTES.md`
 
@@ -33,9 +33,9 @@
 - [~] Variables — introduced; retest
 - [~] Data types — introduced; retest
 - [ ] Interaction: alert, prompt, confirm
-- [~] Type Conversions — introduced; weak area
+- [~] Type Conversions — introduced; significant edge-case gaps remain
 - [~] Basic operators, maths — introduced; plus/string behavior practiced
-- [~] Comparisons — introduced; strict equality needs retest
+- [~] Comparisons — basic cases practiced; abstract equality/nullish edge cases need targeted practice
 - [ ] Conditional branching: if, '?'
 - [ ] Logical operators
 - [ ] Nullish coalescing operator '??'
